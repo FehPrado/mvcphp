@@ -1,12 +1,18 @@
 <?php
 
-$route = $_SERVER['REQUEST_URI'];
+$route = rtrim($_SERVER['REQUEST_URI'], '/');
+if (!$route) $route = 'root';
 
 $routes = [
   //controllers
-  '/' => 'PagesController::index',
+  'root' => 'PagesController::index',
+  
   '/new' => 'PagesController::new',
-  '/routers' => 'RouterControllers::index',
+  
+  '/itinerary' => 'ItineraryController::index',
+  '/itinerary/new' => 'ItineraryController::new',
+  '/itinerary/show' => 'ItineraryController::show',
+  '/itinerary/create' => 'ItineraryController::create',
 
 ];
 

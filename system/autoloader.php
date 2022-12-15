@@ -1,12 +1,10 @@
 <?php
 
 function classAutoLoad ($className) {
-  #se terminar com 'Controller' -> pasta = 'controllers
-  #se terminar com 'Model' -> pasta = 'models'
-  #require onde pasta + className
-  requireDir("controllers/$className.php");
-
-
+  if (endsWith($className, 'Controller')) $folder = 'controllers';
+  if (endsWith($className, 'Model')) $folder = 'models';
+  if (!$folder) return;
+  requireDir("$folder/$className");
 }
 
 spl_autoload_register('classAutoLoad');

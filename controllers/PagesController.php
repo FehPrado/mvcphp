@@ -1,10 +1,11 @@
 <?php
 
-class PagesController extends ApplicationController{
+class PagesController {
   static function index () {
-    $vars['title'] = 'HELLO FROM THE OTHER SIDE';
+    $title = 'HELLO FROM HELL';
+    $subtitle = 'BLA BLA BLA';
 
-    self::render('pages/index', $vars);
+    render('pages/index', get_defined_vars());
   }
 
   static function new () {
