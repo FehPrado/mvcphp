@@ -3,7 +3,7 @@
     <h1> Novo Roteiro </h1>
   </div>
   <div class="col-auto">
-    <a href="<?php path('itinerary/index') ?>" class="btn btn-secondary">Voltar para a Lista</a>
+    <a href="<?php path('itinerary') ?>" class="btn btn-secondary">Voltar para a Lista</a>
   </div>
 </div>
 
